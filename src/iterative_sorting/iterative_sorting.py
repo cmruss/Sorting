@@ -29,12 +29,12 @@ numbers = [9,7,6,8,5,2,1,3,4,112,0]
 # print(selection_sort(numbers))
 
 def selection_sort( arr ):
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr)):
         cur_index = i
         for j in range(0, len(arr)):
             if arr[j] > arr[cur_index]:
                 arr[i], arr[j] = arr[j], arr[i]
-        arr[i], arr[j] = arr[j], arr[i]
+        # arr[i], arr[j] = arr[j], arr[i]
 
     return arr
 
