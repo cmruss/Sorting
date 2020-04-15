@@ -1,12 +1,12 @@
 numbers = [9,7,6,8,5,2,1,3,4,112,0]
-# # TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below 
 # def selection_sort( arr ):
 #     # loop through n-1 elements
 #     for i in range(0, len(arr) - 1):
 #         cur_index = i
-#         # smallest_index = cur_index
-#         # TO-DO: find next smallest element
-#         # (hint, can do in 3 loc) 
+#         smallest_index = cur_index
+        # TO-DO: find next smallest element
+        # (hint, can do in 3 loc) 
 #         for j in range(0, len(arr)):
 #             # print(f"index: {i} sub-index: {j}")
 #             if arr[j] > arr[cur_index]:
@@ -16,34 +16,48 @@ numbers = [9,7,6,8,5,2,1,3,4,112,0]
 #                 # print(arr)
 #                 # smallest_index = j
 #                 # print(f"smallest_index is now: {arr[smallest_index]}")
-
 #         # TO-DO: swap   
 #         # print(arr[i], arr[j])
 #         # another.. index assignment swap.?
 #         arr[i], arr[j] = arr[j], arr[i]
 #         # print(arr[i], arr[j])
 #         # print(arr)
-
 #     return arr
 
 # print(selection_sort(numbers))
 
+# MY SOLUTION
 def selection_sort( arr ):
     for i in range(0, len(arr)):
         cur_index = i
         for j in range(0, len(arr)):
             if arr[j] > arr[cur_index]:
                 arr[i], arr[j] = arr[j], arr[i]
-        # arr[i], arr[j] = arr[j], arr[i]
+        print(arr)
+    return arr
+
+# print(selection_sort(numbers))
+
+# BRADY'S SOLUTION
+def bradys_selection_sort( arr ):
+    # loop through n-1 elements
+    for i in range(0, len(arr) - 1):
+        cur_index = i
+        smallest_index = cur_index
+        for j in range(cur_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+        print(arr)
 
     return arr
 
-print(selection_sort(numbers))
+# print(bradys_selection_sort(numbers))
 
-def insertion_sort(arr):
-    # loop through the array, setting the first index value to 1..?
+def brady_insertion_sort(arr):
+    # loop through the array, setting the first index
     for i in range(1, len(arr)):
-        # make a new array with the first value
+        # make a new array with the current value
         temp = arr[i]
         # connect/initialize the next loop..?
         j = i
@@ -61,6 +75,7 @@ def insertion_sort(arr):
 
 # print(f"insertion sort{insertion_sort(numbers)}")
 
+# MY SOLUTION
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
     # for loop adjusted for array 
@@ -76,6 +91,20 @@ def bubble_sort( arr ):
     return arr
 
 # print(f"bubble_sort{bubble_sort(numbers)}")
+
+# BRADY'S SOLUTION
+def bradys_bubble_sort( arr ):
+    swaps_occured = True
+    while swaps_occured:
+        swaps_occured = False
+        for i in range(len(arr) -1):
+            print(arr)
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swaps_occured = True
+    return arr
+            
+
 
 
 # STRETCH: implement the Count Sort function below
